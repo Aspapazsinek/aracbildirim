@@ -1,1 +1,18 @@
 
+import qrcode
+
+# Sayfanızın yayınlandığı web adresi
+web_linki = "https://kullaniciadi.github.io/01ua852"
+
+# Karekod oluşturma
+qr = qrcode.QRCode(
+    version=1,
+    box_size=10,
+    border=2
+)
+qr.add_data(web_linki)
+qr.make(fit=True)
+
+img = qr.make_image(fill_color="black", back_color="white")
+img.save("arac_bildirim_qr.png")
+print("Karekod başarıyla oluşturuldu: arac_bildirim_qr.png")
