@@ -1,18 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Araç Sahibine Ulaş - 01 UA 852</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f4f6f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 15px; }
+    .card { background: #ffffff; width: 100%; max-width: 400px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); padding: 25px; text-align: center; }
+    .plaka { display: inline-flex; border: 2px solid #000; border-radius: 6px; overflow: hidden; margin-bottom: 20px; font-weight: bold; }
+    .plaka-tr { background: #003399; color: #fff; padding: 6px 10px; font-size: 14px; display: flex; align-items: center; }
+    .plaka-no { padding: 6px 15px; font-size: 20px; color: #000; letter-spacing: 2px; }
+    h2 { font-size: 18px; color: #333; margin-bottom: 8px; }
+    p { font-size: 13px; color: #666; margin-bottom: 20px; }
+    .btn-group { display: flex; flex-direction: column; gap: 10px; }
+    .btn { display: flex; align-items: center; justify-content: center; gap: 8px; background-color: #25D366; color: white; text-decoration: none; padding: 12px 15px; border-radius: 10px; font-weight: 600; font-size: 14px; transition: background 0.2s; }
+    .btn:hover { background-color: #1ebc57; }
+    .btn-custom { background-color: #34495e; }
+    .btn-custom:hover { background-color: #2c3e50; }
+  </style>
+</head>
+<body>
 
-import qrcode
+  <div class="card">
+    <div class="plaka">
+      <div class="plaka-tr">TR</div>
+      <div class="plaka-no">01 UA 852</div>
+    </div>
 
-# Sayfanızın yayınlandığı web adresi
-web_linki = "https://kullaniciadi.github.io/01ua852"
+    <h2>🚘 Araç Sahibine Bildirim Gönder</h2>
+    <p>Lütfen iletmek istediğiniz durumu seçiniz. WhatsApp otomatik açılacaktır.</p>
 
-# Karekod oluşturma
-qr = qrcode.QRCode(
-    version=1,
-    box_size=10,
-    border=2
-)
-qr.add_data(web_linki)
-qr.make(fit=True)
+    <div class="btn-group">
+      <a href="https://wa.me/905XXXXXXXXX?text=Merhaba,%2001%20UA%20852%20plakalı%20aracınız%20hatalı%20park%20edilmiş." class="btn">
+        🚗 Hatalı Park Bildirimi
+      </a>
 
-img = qr.make_image(fill_color="black", back_color="white")
-img.save("arac_bildirim_qr.png")
-print("Karekod başarıyla oluşturuldu: arac_bildirim_qr.png")
+      <a href="https://wa.me/905XXXXXXXXX?text=Merhaba,%2001%20UA%20852%20plakalı%20aracınızın%20camı/farları%20açık%20kalmış." class="btn">
+        💡 Cam / Far Açık Bildirimi
+      </a>
+
+      <a href="https://wa.me/905XXXXXXXXX?text=Merhaba,%2001%20UA%20852%20plakalı%20aracınızın%20alarmı%20çalıyor." class="btn">
+        🚨 Alarm Çalıyor Bildirimi
+      </a>
+
+      <a href="https://wa.me/905XXXXXXXXX?text=Merhaba,%2001%20UA%20852%20plakalı%20aracınızla%20ilgili%20ulaşıyorum." class="btn btn-custom">
+        💬 Özel Mesaj Gönder
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
